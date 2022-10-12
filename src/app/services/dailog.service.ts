@@ -13,14 +13,14 @@ export class DailogService {
   public getDailogData(language: string): Observable<DailogModel[]> {
     let params = new HttpParams();
     params = params.append('language', language)
-    return this.api.get<DailogModel[]>(`https://whatsappchatbot-content-service.azurewebsites.net/dialogs`, { params })
+    return this.api.get<DailogModel[]>(`https://chatbot-content-service.azurewebsites.net/dialogs`, { params })
   }
 
   public getLanguageList(): Observable<string[]> {
-    return this.api.get<string[]>('https://whatsappchatbot-content-service.azurewebsites.net/dialogs/languages')
+    return this.api.get<string[]>('https://chatbot-content-service.azurewebsites.net/dialogs/languages')
   }
 
   public updateDailog(params: DailogModel) {
-    return this.api.post('https://whatsappchatbot-content-service.azurewebsites.net/dialogs', params)
+    return this.api.post('https://chatbot-content-service.azurewebsites.net/dialogs', params)
   }
 }
