@@ -1,0 +1,29 @@
+.dialogName {
+    height: 100px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+h1{
+    background: #4d148c;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px auto 30px auto;
+    color: #fff;
+}
+
+.selectedDropDown{
+    background: #dad6d6;
+}
+
+// ::ng-deep .my-custom-snackbar {
+//     margin: 0 !important;
+//     position: absolute;
+//     right: 25px;
+//     top: 60px;
+//   }

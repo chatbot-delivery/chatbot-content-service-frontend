@@ -1,0 +1,49 @@
+<div id="wrapper" style="padding-top: 30px;">
+
+    <h1>Manage Chatbot Conversation Text</h1>
+
+    <!-- <button mat-stroked-button (click)="openSnackBar()">Show snack-bar</button> -->
+
+
+    <form [formGroup]="dailogForm" class="main-container">
+        <div class="container">
+            <div class="btn-group" style="margin-bottom:10px">
+                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"> Language Selection </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" *ngFor="let lan of languageList"
+                        [class.selectedDropDown]="lan == selectedLanguage" (click)="onChangeLanguage(lan)">{{lan}}</a>
+                </div>
+                <div style="padding: 5px;font-size: x-large;"> : {{selectedLanguage}}</div>
+            </div>
+            <div class="row gy-5" formArrayName="data">
+                <div class="col-xs-2 col-md-4 col-lg-3" *ngFor="let mains of getDataFormArray.controls; let i = index">
+                    <div class="card" style="width: auto;" [formGroupName]="i">
+                        <div>
+                            <input type="text" class="form-control dialogName" formControlName="dialogName"
+                                [class.error]="mains.value.dialogName == '' && submitted">
+                        </div>
+                        <div class="card-body" formArrayName="dialogTexts">
+                            <div style="display: flex;align-items: center;"
+                                *ngFor="let dialogText of getdialogTextsArray(i).controls;let j = index">
+                                <textarea class="form-control" style="margin-top: 8px;" [formControlName]="j" rows="2"
+                                    [class.error]="submitted && getdialogTextsArray(i).at(j).invalid"></textarea>
+                                <!-- <mat-icon (click)="delDailogText(i,j)">delete_outline</mat-icon> -->
+                            </div>
+
+                            <div style="text-align: center; margin-top:10px">
+                                <!-- <mat-icon style="font-size: xx-large;" aria-label="Example home icon"
+                                    (click)="addDailogText(i)">add_circle_outline
+                                </mat-icon> -->
+                                <button class="btn btn-primary" (click)="saveDailogData(mains)">Save</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>

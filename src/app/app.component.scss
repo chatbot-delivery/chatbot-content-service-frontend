@@ -1,0 +1,27 @@
+.userlogout{
+    text-align: center;
+    opacity: 1.0;
+    color: whitesmoke;
+    align-content: center;
+    align-items: center;
+    margin-left: 24px;
+}
+.pl-nav{
+    background: #4d148c;
+    height: auto;
+    margin-left: 5px;
+}
+.mat-tab-link {
+    color: white;
+    text-align: center;
+    font-size: larger;
+    cursor: pointer;
+    padding: 6px 0px;
+    text-decoration: none;
+    opacity: 1;
+    font-weight: 400;
+}
+::ng-deep .mat-ink-bar{
+    background-color: #ffff !important;
+    margin-bottom: 10px !important
+}
