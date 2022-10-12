@@ -23,7 +23,6 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install -g angular-cli
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -53,5 +52,5 @@ jobs:
         with:
           app-name: 'chatbot-content-service-frontend'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7DF2641B859C4CBDB77B4684B6F3DE81 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A1B2D715D1444EBB9105C843F9897670 }}
           package: .
